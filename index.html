@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Sugar Bliss</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-header">
+            <figure class="logo">
+                <img src="img/logo.png" alt="Logo Sugar Bliss">
+            </figure>
+
+
+            <div class="icons">
+                <img src="img/telefone.png" alt="Telefone">
+                <img src="img/carrinho.png" alt="Carrinho">
+                <img src="img/user.png" alt="Usuário">
+            </div>
+
+            <div class="menu-toggle">☰</div>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#carrossel">HOME</a></li>
+                <li><a href="cardapio">CARDÁPIO</a></li>
+                <li><a href="sobre_nos">SOBRE NÓS</a></li>
+                <li><a href="para_presentear">PARA PRESENTEAR</a></li>
+                <li><a href="portfolio">PORTFÓLIO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="carrossel" id="carrossel">
+        <div class="slides">
+            <img src="img/banner1.png" alt="">
+            <img src="img/banner2.jpg" alt="">
+            <img src="img/banner3.jpg" alt="">
+            <img src="img/banner4.jpg" alt="">
+        </div>
+    </section>
+    <div class="bolinhas">
+        <span class="ativa"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <section class="bolos">
+        <h2>OS BOLOS MAIS PEDIDOS</h2>
+
+        <div class="grid-bolos">
+
+            <figure>
+                <div class="card">
+                    <img src="img/bolo1.png">
+                    <div class="favorito ativo">❤️</div>
+                </div>
+                <figcaption>
+                    Chocolate com Chantilly <br>
+                    <strong>R$55,00</strong>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <div class="card">
+                    <img src="img/bolo2.png">
+                    <div class="favorito">🤍</div>
+                </div>
+                <figcaption>
+                    Bolo de morango com leite ninho <br>
+                    <strong>R$75,00</strong>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <div class="card">
+                    <img src="img/bolo3.png">
+                    <div class="favorito">🤍</div>
+                </div>
+                <figcaption>
+                    Chocolate red velvet <br>
+                    <strong>R$67,00</strong>
+                </figcaption>
+            </figure>
+
+        </div>
+    </section>
+
+    <section class="visita">
+
+        <img src="img/lugar.png">
+
+        <div class="texto">
+            <h2>Venha nos visitar!</h2>
+            <div class="local">
+                <img src="img/localizacao.png" alt="Localização">
+                <p>Rua Mateus Grou, 50 Pinheiros - São Paulo</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="contato">
+        <h2>ENTRE EM CONTATO</h2>
+
+        <div class="grid-contato">
+
+            <div>
+                <img src="img/email.png">
+                <p>admin@admin.com.br</p>
+            </div>
+
+            <div>
+                <img src="img/whatsapp.png">
+                <p>(11) 99999-9999</p>
+            </div>
+
+            <div>
+                <img src="img/instagram.png">
+                <p>@sugarbliss10</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="rodape">
+
+        <div class="topo-rodape">
+
+            <div class="logo-area">
+                <img src="img/logo_branca.png" alt="Logo">
+                <p>© 2026 SugarBliss Brasil. All rights reserved</p>
+            </div>
+
+            <div class="cadastro">
+                <h3>CADASTRE-SE</h3>
+                <div class="input-cadastro">
+                    <input type="email" id="email" placeholder="Seu email">
+                    <button onclick="cadastrar()">➤</button>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="conteudo-rodape">
+
+            <div class="coluna">
+                <h3>ENTREGA</h3>
+                <p>Produtos de pronta entrega:</p>
+                <p>delivery em até 24h para Mogi das Cruzes.</p>
+                <p>Outras cidades consulte na compra.</p>
+            </div>
+
+            <div class="coluna">
+                <h3>RETIRAR NA LOJA</h3>
+                <p>Av. Dr. Cândido Xavier de Almeida e Souza, 200</p>
+            </div>
+
+            <div class="coluna">
+                <h3>HORÁRIO</h3>
+                <p>Seg a sáb: 10h às 20h</p>
+                <p>Domingo: 12h às 18h</p>
+            </div>
+
+            <div class="coluna">
+                <h3>CONTATO</h3>
+                <p><img src="img/email_b.png"> contato@sugarbliss.com.br</p>
+                <p><img src="img/telefone_b.png"> (11) 9999-0000</p>
+                <p><img src="img/whatsapp_b.png"> (11) 99999-9999</p>
+
+            </div>
+
+            <div class="coluna">
+                <h3>ACOMPANHE</h3>
+                <p><img src="img/insta_b.png"> instagram.com/sugar_bliss</p>
+                <p><img src="img/facebook.png"> facebook.com/sugarbliss</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
