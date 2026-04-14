@@ -1,0 +1,1226 @@
+/*Css da página cardapio doces*/
+/* --- RESET E AJUSTE DE FLUXO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    /* Ajuste este valor para ser a altura total do seu header (topo + menu) */
+    padding-top: 200px; 
+}
+
+/* HEADER */
+header {
+  padding: 45px 100px;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-header {
+  position: relative;
+  text-align: center;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.menu a {
+  color: #333;
+  font: 16px 'PoppinsRegular', sans-serif;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #bf807a;
+}
+
+.icons {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+.icons img {
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0 10px;
+}
+
+.icons img:hover {
+  transform: scale(1.1);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* --- MEDIA QUERIES (MOBILE) --- */
+@media (max-width: 768px) {
+   header {
+    padding: 25px 20px;
+  }
+
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .icons {
+    position: static;
+    transform: none;
+    display: flex;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .menu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .menu.active {
+    max-height: 300px;
+    opacity: 1;
+  }
+}
+
+/* FOOTER */
+.rodape {
+  background: #2b2b2b;
+  color: #ccc;
+  padding: 40px 40px;
+  font-family: Arial, sans-serif;
+}
+
+.topo-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area img {
+  width: 300px;
+  display: block;
+  margin-left: -20px; /*Alinha a imagem dentro da div à esquerda*/
+}
+
+.logo-area p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.cadastro h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.input-cadastro {
+  display: flex;
+  background: #444;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.input-cadastro input {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  width: 150px;
+}
+
+.input-cadastro button {
+  border: none;
+  background: #666;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.input-cadastro button:hover {
+  background: #888;
+}
+
+hr {
+  border: 0.5px solid #444;
+  margin: 30px 0;
+}
+
+.conteudo-rodape {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.coluna {
+  max-width: 180px;
+}
+
+.coluna h3 {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.coluna p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coluna img {
+  width: 16px;
+}
+
+@media (max-width: 768px) {
+    .logo-area img {
+        width: 200px; /* Reduz o tamanho no celular */
+        justify-content: center;
+        display: block;
+         margin-left: 23px; 
+        margin-right: 0; 
+    }
+    
+    .topo-rodape {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .conteudo-rodape {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+    }
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+.container-cardapio {
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- SEÇÃO DE BUSCA --- */
+.secao-busca {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.envelope-busca {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.circulo-icone {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px; 
+    height: 34px;
+    background-color: #F8D8DA;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; 
+    z-index: 2;
+}
+
+.icone-busca-img {
+    width: 18px; 
+    height: 18px;
+    opacity: 0.8;
+}
+
+.envelope-busca input {
+    width: 100%;
+    padding: 14px 20px 14px 55px; 
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* --- SEÇÃO DE CATEGORIAS --- */
+.categorias {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+
+.botao-cat {
+    padding: 10px 30px; 
+    border: none;
+    border-radius: 50px;
+    background-color: #BF807A; 
+    color: #FFFFFF;
+    font-weight: lighter;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(113, 75, 72, 0.3);
+    text-decoration: none;
+    display: inline-block;
+
+    /* Mesma transição suave do botão comprar */
+    transition: all 0.3s ease;
+}
+
+.botao-cat:hover {
+    /* Inversão de cores similar ao botão comprar */
+    background-color: #BF807A; 
+    color: #F2C9D4;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0px 6px 15px rgba(113, 75, 72, 0.4);
+}
+
+.botao-cat.ativo {
+    background-color: #8C2E26; /* Um tom mais escuro para mostrar que está selecionado */
+    color: #FFFFFF;
+    font-weight: bolder;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    transform: translateY(0);
+}
+
+/* Efeito de clique rápido e tátil */
+.botao-cat:active {
+    transform: scale(0.95);
+}
+
+
+/* --- SEÇÃO DE PRODUTOS (FAIXA CENTRALIZADA) --- */
+.categoria-produto {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Padding simétrico para garantir centro real */
+    padding: 10px 0; 
+    margin-top: 80px; 
+
+    background-image: url('../img/fundo_cardapio.png'); 
+    background-repeat: repeat-x;
+    background-size: auto 70%; 
+    background-position: center top;
+    overflow: visible; 
+}
+
+/* AJUSTE: Centralizado verticalmente */
+.conteudo-interno {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 40px;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+/* AJUSTE: Texto no meio exato */
+.conteudo-produto {
+    flex: 1;
+    max-width: 600px;
+    margin-top: -150px; 
+}
+
+.titulo-categoria {
+    font-size: 45px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1C1C1C;
+    line-height: 1.1;
+}
+
+.item-produto {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.nome-doce {
+    font-size: 18px;
+    color: #1C1C1C;
+    white-space: nowrap;
+}
+
+.linha-pontilhada {
+    flex: 1;
+    border-bottom: 2px dotted #9e9e9e;
+    height: 1px;
+    margin-bottom: 5px;
+}
+
+.preco-doce {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1C1C1C;
+    margin-right: 15px;
+}
+
+.botao-comprar {
+    background-color: #F2C9D4;
+    color: #8C2E26;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.botao-comprar:hover {
+    background-color: #D1A8B3; /* Inverte a cor de fundo */
+    color: #FFFFFF; /* Muda o texto para branco */
+    transform: scale(1.05);  /* Dá um leve aumento no tamanho */
+    box-shadow: 0px 4px 10px rgba(140, 46, 38, 0.3); /* Intensifica a sombra */
+}
+
+.botao-comprar:active {
+    transform: scale(0.98); /* Dá a sensação de que o botão foi pressionado */
+}
+
+.botao-comprar-branco {
+    background-color: #F0EFEC;
+    color: #8C2E26;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.botao-comprar-branco:hover {
+    background-color: #D1A8B3; /* Inverte a cor de fundo */
+    color: #FFFFFF; /* Muda o texto para branco */
+    transform: scale(1.05);  /* Dá um leve aumento no tamanho */
+    box-shadow: 0px 4px 10px rgba(140, 46, 38, 0.3); /* Intensifica a sombra */
+}
+
+.botao-comprar-branco:active {
+    transform: scale(0.98); /* Dá a sensação de que o botão foi pressionado */
+}
+
+/* --- Imagem com Relevo--- */
+.imagem-destaque {
+    position: relative;
+    z-index: 10;
+}
+
+.imagem-destaque img {
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    /* Mantido seu transform para efeito de relevo */
+    transform: translateY(-80px) translateX(70px) scale(1.15); 
+    filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.3));
+}
+
+
+/*SEÇÃO BOLOS*/
+
+.categoria-produto.secao-bolos {
+     background-image: linear-gradient(#F8D8DA, #F8D8DA);
+
+    background-color: transparent; /* Remove o fundo total */
+    background-repeat: no-repeat;
+    background-size: 100% 88%; 
+    background-position: center top;
+
+    width: 100vw;
+    margin-top: 20px; /* Mesma margem da faixa de docinhos */
+    padding: 0; /* Remove espaços que afastam o bolo da borda */
+    overflow: visible; 
+    display: flex;
+    justify-content: center;
+
+   /* Garante que a faixa ignore margens do container pai */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;}
+
+/* Ajuste do container para permitir que o bolo encoste na borda */
+.secao-bolos .conteudo-interno {
+    width: 100%;
+    max-width: 100%;/* Quebra o limite de 1200px */
+    padding: 0; /* Zera o padding lateral */
+    display: flex;
+    flex-direction: row; /*Inverte as informações*/
+    align-items: center;
+}
+
+/* LADO ESQUERDO: A Imagem */
+.imagem-destaque-bolo {
+    flex: 0 0 45%;                    /* Ocupa 45% da largura da tela */
+    display: flex;
+    justify-content: flex-start;      /* Garante que a div cole na esquerda */
+}
+
+.imagem-destaque-bolo img {
+    width: 100%;
+    max-width: 450px;                 /* Ajuste o tamanho conforme achar melhor */
+    height: auto;
+    object-fit: contain;
+    /* Efeito de relevo que você gosta */
+    transform: translateY(-40px) scale(1.1); 
+    filter: drop-shadow(-15px 20px 25px rgba(0,0,0,0.2));
+    
+    margin-left: 0;                   /* Garante que não haja margem na esquerda */
+}
+
+/* LADO DIREITO: O Texto */
+.secao-bolos .conteudo-produto {
+    flex: 1;
+    padding-right: 7%;
+    margin-top: -35px; /* Ajuste para o texto subir e centralizar na faixa de 70% */
+}
+
+.secao-bolos .titulo-categoria {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/* SEÇÃO DOCES GOURMET*/
+
+.secao-doces-gourmet {
+    margin-top: 100px; /* Espaço para não colar na seção de bolos */
+}
+
+.secao-doces-gourmet .imagem-destaque img {
+    max-width: 450px; /* Ajuste para os brigadeiros ficarem grandes e bonitos como na foto */
+    transform: translateY(-100px) translateX(70px) scale(1.1);
+    filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.25));
+}
+
+/*SEÇÃO CAFÉS*/
+/* --- Imagem com Relevo--- */
+.imagem-destaque-cafe {
+    position: relative;
+    z-index: 10;
+}
+
+.imagem-destaque-cafe img {
+    max-width: 500px;
+    height: auto;
+    /* Mantido seu transform para efeito de relevo */
+    transform: translateY(-80px) translateX(70px) scale(1.15); 
+    filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.3));
+}
+
+/*SEÇÃO BEBIDAS GELADAS*/
+.categoria-produto.secao-geladas {
+     background-image: linear-gradient(#F8D8DA, #F8D8DA);
+
+    background-color: transparent; /* Remove o fundo total */
+    background-repeat: no-repeat;
+    background-size: 100% 88%; 
+    background-position: center top;
+
+    width: 100vw;
+    margin-top: 20px; /* Mesma margem da faixa de docinhos */
+    padding: 0; /* Remove espaços que afastam o bolo da borda */
+    overflow: visible; 
+    display: flex;
+    justify-content: center;
+
+   /* Garante que a faixa ignore margens do container pai */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;}
+
+/* Ajuste do container para permitir que o bolo encoste na borda */
+.secao-geladas .conteudo-interno {
+    width: 100%;
+    max-width: 100%;/* Quebra o limite de 1200px */
+    padding: 0; /* Zera o padding lateral */
+    display: flex;
+    flex-direction: row; /*Inverte as informações*/
+    align-items: center;
+}
+.imagem-destaque-gelada {
+    flex: 0 0 45%;                    /* Ocupa 45% da largura da tela */
+    display: flex;
+    justify-content: flex-start;      /* Garante que a div cole na esquerda */
+}
+
+.imagem-destaque-gelada img {
+    width: 100%;
+    max-width: 450px;                 /* Ajuste o tamanho conforme achar melhor */
+    height: auto;
+    object-fit: contain;
+    /* Efeito de relevo que você gosta */
+    transform: translateY(-40px) scale(1.1); 
+    filter: drop-shadow(-15px 20px 25px rgba(0,0,0,0.2));
+    
+    margin-left: 0;                   /* Garante que não haja margem na esquerda */
+}
+
+/* LADO DIREITO: O Texto */
+.secao-geladas .conteudo-produto {
+    flex: 1;
+    padding-right: 7%;
+    margin-top: -35px; /* Ajuste para o texto subir e centralizar na faixa de 70% */
+}
+
+.secao-geladas .titulo-categoria {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+
+/*SEÇÃO SUCOS*/
+/* --- Imagem com Relevo--- */
+.imagem-destaque-suco {
+    position: relative;
+    z-index: 10;
+}
+
+.imagem-destaque-suco img {
+    max-width: 500px;
+    height: auto;
+    /* Mantido seu transform para efeito de relevo */
+    transform: translateY(-80px) translateX(70px) scale(1.15); 
+    filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.3));
+}
+
+/*SEÇÃO SALGADOS ASSADOS*/
+/* --- Imagem com Relevo--- */
+.imagem-destaque-assados {
+    position: relative;
+    z-index: 10;
+}
+
+.imagem-destaque-assados img {
+    max-width: 500px;
+    height: auto;
+    /* Mantido seu transform para efeito de relevo */
+    transform: translateY(-80px) translateX(50px) scale(1.15); 
+    filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.3));
+}
+
+/*SEÇÃO SALGADOS FRITOS*/
+.categoria-produto.secao-fritos {
+     background-image: linear-gradient(#F8D8DA, #F8D8DA);
+
+    background-color: transparent; /* Remove o fundo total */
+    background-repeat: no-repeat;
+    background-size: 100% 88%; 
+    background-position: center top;
+
+    width: 100vw;
+    margin-top: 20px; /* Mesma margem da faixa de docinhos */
+    padding: 0; /* Remove espaços que afastam o bolo da borda */
+    overflow: visible; 
+    display: flex;
+    justify-content: center;
+
+   /* Garante que a faixa ignore margens do container pai */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;}
+
+/* Ajuste do container para permitir que o bolo encoste na borda */
+.secao-fritos .conteudo-interno {
+    width: 100%;
+    max-width: 100%;/* Quebra o limite de 1200px */
+    padding: 0; /* Zera o padding lateral */
+    display: flex;
+    flex-direction: row; /*Inverte as informações*/
+    align-items: center;
+}
+.imagem-destaque-fritos {
+    flex: 0 0 45%;                    /* Ocupa 45% da largura da tela */
+    display: flex;
+    justify-content: flex-start;      /* Garante que a div cole na esquerda */
+}
+
+.imagem-destaque-fritos img {
+    width: 100%;
+    max-width: 450px;                 /* Ajuste o tamanho conforme achar melhor */
+    height: auto;
+    object-fit: contain;
+    /* Efeito de relevo que você gosta */
+    transform: translateY(-40px) translateX(25px) scale(1.1); 
+    filter: drop-shadow(-15px 20px 25px rgba(0,0,0,0.2));
+    
+    margin-left: 0;                   /* Garante que não haja margem na esquerda */
+}
+
+/* LADO DIREITO: O Texto */
+.secao-fritos .conteudo-produto {
+    flex: 1;
+    padding-right: 7%;
+    margin-top: -35px; /* Ajuste para o texto subir e centralizar na faixa de 70% */
+}
+
+.secao-fritos .titulo-categoria {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/*SEÇÃO SALGADOS ESPECIAIS*/
+/* --- Imagem com Relevo--- */
+.imagem-destaque-especiais {
+    position: relative;
+    z-index: 10;
+}
+
+.imagem-destaque-especiais img {
+    max-width: 500px;
+    height: auto;
+    /* Mantido seu transform para efeito de relevo */
+    transform: translateY(-80px) translateX(50px) scale(1.15); 
+    filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.3));
+}
+
+/*SEÇÃO LANCHES ESPECIAIS*/
+/* --- Imagem com Relevo--- */
+.imagem-destaque-lanches-especiais {
+    position: relative;
+    z-index: 10;
+}
+
+.imagem-destaque-lanches-especiais img {
+    max-width: 500px;
+    height: auto;
+    /* Mantido seu transform para efeito de relevo */
+    transform: translateY(-80px) translateX(50px) scale(1.15); 
+    filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.3));
+}
+
+/*SEÇÃO LANCHES QUENTES*/
+/* --- Imagem com Relevo--- */
+.imagem-destaque-lanches-quentes {
+    position: relative;
+    z-index: 10;
+}
+
+.imagem-destaque-lanches-quentes img {
+    max-width: 500px;
+    height: auto;
+    /* Mantido seu transform para efeito de relevo */
+    transform: translateY(-80px) translateX(50px) scale(1.15); 
+    filter: drop-shadow(15px 15px 25px rgba(0,0,0,0.3));
+}
+
+/*SEÇÃO SALGADOS FRITOS*/
+.categoria-produto.secao-lanches-naturais {
+     background-image: linear-gradient(#F8D8DA, #F8D8DA);
+
+    background-color: transparent; /* Remove o fundo total */
+    background-repeat: no-repeat;
+    background-size: 100% 88%; 
+    background-position: center top;
+
+    width: 100vw;
+    margin-top: 20px; /* Mesma margem da faixa de docinhos */
+    padding: 0; /* Remove espaços que afastam o bolo da borda */
+    overflow: visible; 
+    display: flex;
+    justify-content: center;
+
+   /* Garante que a faixa ignore margens do container pai */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;}
+
+/* Ajuste do container para permitir que o bolo encoste na borda */
+.secao-lanches-naturais .conteudo-interno {
+    width: 100%;
+    max-width: 100%;/* Quebra o limite de 1200px */
+    padding: 0; /* Zera o padding lateral */
+    display: flex;
+    flex-direction: row; /*Inverte as informações*/
+    align-items: center;
+}
+.imagem-destaque-lanches-naturais {
+    flex: 0 0 45%;                    /* Ocupa 45% da largura da tela */
+    display: flex;
+    justify-content: flex-start;      /* Garante que a div cole na esquerda */
+}
+
+.imagem-destaque-lanches-naturais img {
+    width: 100%;
+    max-width: 450px;                 /* Ajuste o tamanho conforme achar melhor */
+    height: auto;
+    object-fit: contain;
+    /* Efeito de relevo que você gosta */
+    transform: translateY(-40px) translateX(25px) scale(1.1); 
+    filter: drop-shadow(-15px 20px 25px rgba(0,0,0,0.2));
+    
+    margin-left: 0;                   /* Garante que não haja margem na esquerda */
+}
+
+/* LADO DIREITO: O Texto */
+.secao-lanches-naturais .conteudo-produto {
+    flex: 1;
+    padding-right: 7%;
+    margin-top: -35px; /* Ajuste para o texto subir e centralizar na faixa de 70% */
+}
+
+.secao-lanches-naturais .titulo-categoria {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/* 1. FUNDO DO MODAL (OVERLAY) */
+.modal-sobreposicao {
+    display: none; /* Escondido por padrão (JS controla) */
+    position: fixed;
+    z-index: 9999; /* Fica acima de qualquer outro elemento */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro transparente */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+}
+
+/* 2. CAIXA DO CONTEÚDO */
+.modal-conteudo {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 850px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: deslizarEntrada 0.4s ease-out;
+}
+
+/* Animação de entrada suave */
+@keyframes deslizarEntrada {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* 3. BOTÃO FECHAR (X) */
+.fechar-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.fechar-modal:hover {
+    color: #8C2E26; /* Cor de destaque ao passar o mouse */
+}
+
+/* 4. LAYOUT DE COLUNAS (CHECKOUT) */
+.checkout-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Coluna Esquerda: Pagamento */
+.coluna-pagamento {
+    flex: 1.2;
+    border-right: 1px solid #eee;
+    padding-right: 30px;
+}
+
+.passo-checkout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.numero-passo {
+    background: #7DBA84; /* Verde suave */
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.opcoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.opcao-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opcao-card:hover {
+    border-color: #BF807A;
+    background-color: #fffafb;
+}
+
+.botao-finalizar {
+    width: 100%;
+    background-color: #BF807A;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.botao-finalizar:hover {
+    background-color: #a66b65;
+}
+
+/* Coluna Direita: Resumo */
+.coluna-resumo {
+    flex: 1;
+}
+
+.titulo-resumo {
+    color: #704B48;
+    margin-bottom: 20px;
+}
+
+.produto-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#nomeProdutoModal {
+    color: #704B48;
+    margin-bottom: 5px;
+}
+
+.descricao-entrega {
+    font-size: 12px;
+    color: #888;
+}
+
+.produto-preco {
+    font-weight: bold;
+    color: #704B48;
+}
+
+.total-pedido {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-pedido strong {
+    font-size: 20px;
+    color: #8C2E26;
+}
+
+.voltar-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #BF807A;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* --- RESPONSIVIDADE EXCLUSIVA DO CONTEÚDO (CARDÁPIO) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste da Busca e Categorias */
+    .secao-busca {
+        margin-bottom: 30px;
+    }
+    
+    .categorias {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .botao-cat {
+        padding: 8px 15px;
+        font-size: 12px;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    /* 2. Ajuste das Faixas e Empilhamento (Imagem em cima) */
+    .categoria-produto, 
+    .categoria-produto.secao-bolos, 
+    .categoria-produto.secao-geladas, 
+    .categoria-produto.secao-fritos,
+    .categoria-produto.secao-lanches-naturais {
+        height: auto;
+        padding: 40px 0;
+        background-size: cover;
+    }
+
+    .conteudo-interno, 
+    .secao-bolos .conteudo-interno, 
+    .secao-geladas .conteudo-interno, 
+    .secao-fritos .conteudo-interno,
+    .secao-lanches-naturais .conteudo-interno {
+        display: flex !important;
+        flex-direction: column !important; /* Garante o empilhamento vertical */
+        max-width: 100%;
+        padding: 0 20px;
+        align-items: center !important; /* Adicionado para garantir centralização total */
+    }
+
+    /* FORÇA A IMAGEM PARA O TOPO */
+    .imagem-destaque, .imagem-destaque-bolo, .imagem-destaque-cafe, 
+    .imagem-destaque-gelada, .imagem-destaque-suco, .imagem-destaque-assados, 
+    .imagem-destaque-fritos, .imagem-destaque-especiais, 
+    .imagem-destaque-lanches-especiais, .imagem-destaque-lanches-quentes, 
+    .imagem-destaque-lanches-naturais {
+        order: 1 !important;
+        width: 100% !important; /* Garante que a div da imagem ocupe a largura toda */
+        flex: none !important;
+        margin: 0 !important;
+    }
+
+    /* FORÇA O CONTEÚDO PARA BAIXO DA IMAGEM */
+    .conteudo-produto, .secao-bolos .conteudo-produto, 
+    .secao-geladas .conteudo-produto, .secao-fritos .conteudo-produto,
+    .secao-lanches-naturais .conteudo-produto {
+        order: 2 !important;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px !important;
+        padding-right: 0 !important;
+        text-align: center;
+    }
+
+    /* 3. Ajuste das Imagens (Padronizadas e centralizadas) */
+    .imagem-destaque img, .imagem-destaque-bolo img, .imagem-destaque-cafe img, 
+    .imagem-destaque-gelada img, .imagem-destaque-suco img, .imagem-destaque-assados img, 
+    .imagem-destaque-fritos img, .imagem-destaque-especiais img, 
+    .imagem-destaque-lanches-especiais img, .imagem-destaque-lanches-quentes img, 
+    .imagem-destaque-lanches-naturais img {
+        max-width: 250px !important; /* Ajustado para um tamanho padrão que não quebra */
+        margin: 0 auto !important;
+        transform: none !important; /* Remove deslocamentos laterais (Corrige o Kibe) */
+        filter: drop-shadow(10px 10px 15px rgba(0,0,0,0.2));
+        display: block;
+        margin-left: auto !important; /* Garante centralização manual se necessário */
+        margin-right: auto !important;
+    }
+
+    /* 4. Título no Meio */
+    .titulo-categoria {
+        font-size: 28px;
+        text-align: center !important; 
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    /* 5. Lista de Preços e Botões */
+    .item-produto {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .nome-doce, .preco-doce {
+        font-size: 16px;
+    }
+
+    .linha-pontilhada {
+        display: none;
+    }
+
+    .botao-comprar, .botao-comprar-branco {
+        width: 80%;
+        margin: 10px auto !important; /* Centraliza o botão */
+        padding: 10px;
+        display: block;
+    }
+}
+
+/* --- PÁGINA DE DETALHES E AVALIAÇÕES --- */
+
+.container-detalhe {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Botão Voltar Bonitinho */
+.navegacao-voltar { margin-bottom: 30px; }
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #8C2E26;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border-radius: 50px;
+    background-color: #fdf2f3;
+    transition: 0.3s;
+}
+.btn-voltar:hover { background-color: #F2C9D4; }
+.btn-voltar .seta { margin-right: 8px; }
+
+.layout-detalhe {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.coluna-imagem { flex: 1; text-align: center; }
+.coluna-imagem img { max-width: 100%; filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.1)); }
+.coluna-infos { flex: 1; }
+
+.nome-produto-detalhe { font-size: 38px; font-weight: bold; margin-bottom: 10px; color: #333; }
+.preco-produto-detalhe { font-size: 28px; color: #8C2E26; font-weight: bold; margin-bottom: 20px; }
+.descricao-produto-detalhe { color: #666; line-height: 1.6; margin-bottom: 30px; }
+
+/* LINHA ROSA */
+.linha-rosa-divisora {
+    border: 0;
+    height: 2px;
+    background-color: #F2C9D4;
+    margin: 40px 0;
+}
+
+/* SEÇÃO DE COMENTÁRIOS ESTILO PLAY STORE */
+.secao-comentarios { padding: 20px 0; }
+.titulo-comentarios { font-size: 22px; color: #BF807A; margin-bottom: 30px; }
+.card-comentario { margin-bottom: 30px; max-width: 800px; }
+.topo-comentario { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+.foto-usuario { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
+.user-info { display: flex; flex-direction: column; }
+.nome-usuario { font-weight: bold; font-size: 15px; color: #333; }
+.estrelas-comentario { color: #8C2E26; font-size: 12px; }
+.estrelas-comentario .vazia { color: #ddd; }
+.data-comentario { margin-left: auto; font-size: 12px; color: #999; }
+.texto-comentario { font-size: 14px; color: #555; line-height: 1.5; padding-left: 60px; }
+
+/* COMPRA */
+.acoes-compra { display: flex; align-items: center; gap: 20px; }
+.seletor-quantidade { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 50px; padding: 5px 15px; background: #fff; }
+.seletor-quantidade button { background: none; border: none; font-size: 20px; cursor: pointer; color: #8C2E26; }
+.seletor-quantidade input { width: 40px; text-align: center; border: none; outline: none; }
+.botao-comprar-detalhe { background-color: #F2C9D4; color: #8C2E26; border: none; padding: 12px 40px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.botao-comprar-detalhe:hover { transform: scale(1.05); }
+
+/* RESPONSIVIDADE ATUALIZADA */
+@media (max-width: 768px) {
+    .layout-detalhe { flex-direction: column; text-align: center; }
+    
+    .acoes-compra { 
+        flex-direction: row; /* Mantém na mesma linha no mobile */
+        justify-content: center; /* Joga tudo para a direita */
+        width: 100%;
+        gap: 10px;
+    }
+
+    .botao-comprar-detalhe {
+        padding: 12px 25px; /* Diminui um pouco o botão para caber melhor na direita */
+        font-size: 14px;
+    }
+
+    .texto-comentario { padding-left: 0; }
+    .data-comentario { display: none; }
+}
