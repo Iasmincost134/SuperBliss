@@ -28,6 +28,8 @@ function proximoSlide() {
 
 setInterval(proximoSlide, 3000);
 
+// FOOTER
+
 function cadastrar() {
   const email = document.getElementById("email").value;
 
@@ -37,3 +39,26 @@ function cadastrar() {
     alert("Cadastrado com sucesso: " + email);
   }
 }
+
+// PERSONALIZE
+const botao = document.querySelector('.comprar_conteudo a');
+const selects = document.querySelectorAll('.opcao');
+
+botao.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let selecionados = [];
+
+    selects.forEach(select => {
+        if (select.value !== "") {
+            selecionados.push(select.value);
+        }
+    });
+
+    if (selecionados.length < 5) {
+      alert("Escolha todos os itens do kit!");
+    } else {
+        alert("Kit montado com sucesso!");
+        console.log("Itens escolhidos:", selecionados);
+    }
+});
