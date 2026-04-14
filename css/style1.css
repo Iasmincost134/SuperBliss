@@ -1,0 +1,379 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* CORREÇÃO DO HEADER FIXO */
+body {
+  padding-top: 140px; /* evita sobreposição do header */
+}
+
+/* HEADER */
+header {
+  padding: 45px 100px;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+/* TOPO */
+.top-header {
+position: relative;
+text-align: center;
+}
+
+/* LOGO */
+.logo img {
+  height: 80px;
+}
+
+/* MENU */
+.menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.menu a {
+  color: #333;
+  font: 16px 'PoppinsRegular', sans-serif;
+
+}
+
+.menu a:hover {
+  color: #d48c94;
+}
+
+/* ÍCONES */
+.icons {
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+  display: flex;
+  gap: 15px;
+  top: 50%;
+}
+
+.icons img {
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0 10px;
+}
+
+.icons img:hover {
+  transform: scale(1.1);
+}
+
+/* MENU MOBILE */
+.menu-toggle {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* IMAGENS */
+main img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* SOBRE */
+.sobre .texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.sobre .texto p {
+  margin-bottom: 15px;
+  color: black;
+}
+
+/* NÚMEROS */
+.numeros {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.numeros h2 {
+  font-size: 3.5rem;
+  color: #8C2E26;
+}
+
+.numeros p {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* HISTÓRIA */
+.historia {
+  background-color: #F2C9D4;
+}
+
+.historia .texto h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* DEPOIMENTOS */
+.depoimentos {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.depoimentos-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+transition: all 0.6s ease;
+}
+
+.card-depoimento:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.card-depoimento {
+  flex: 1;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  text-align: left;
+  border-bottom: 3px solid #f5ced5;
+}
+
+.estrelas {
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+/* USUÁRIO */
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.usuario img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* MISSÃO, VISÃO E VALORES */
+.mvv {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mvv h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.mvv-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.mvv-item .icon {
+  font-size: 1.8rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  header {
+    padding: 25px 20px;
+  }
+  
+
+  .top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+  }
+
+  .menu-toggle {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .menu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  .menu.active {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .container,
+  .depoimentos-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .numeros {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .historia .container {
+    flex-direction: column-reverse;
+  }
+    .topo-rodape {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .logo-area img {
+    width: 200px;
+  }
+
+  .conteudo-rodape {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+  }
+  
+}
+
+
+
+.rodape {
+  background: #2b2b2b;
+  color: #ccc;
+  padding: 40px 80px;
+  font-family: Arial, sans-serif;
+}
+
+.topo-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area img {
+  width: 300px;
+}
+
+.logo-area p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.cadastro h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.input-cadastro {
+  display: flex;
+  background: #444;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.input-cadastro input {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  width: 150px;
+}
+
+.input-cadastro button {
+  border: none;
+  background: #666;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.input-cadastro button:hover {
+  background: #888;
+}
+
+hr {
+  border: 0.5px solid #444;
+  margin: 30px 0;
+}
+
+.conteudo-rodape {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.coluna {
+  max-width: 180px;
+}
+
+.coluna h3 {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.coluna p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coluna img {
+  width: 16px;
+}
