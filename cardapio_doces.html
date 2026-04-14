@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Doces</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+<header>
+        <div class="top-header">
+            <figure class="logo">
+                <img src="img/logo.png" alt="Logo Sugar Bliss">
+            </figure>
+
+            <div class="icons">
+                <img src="img/telefone.png" alt="Telefone">
+                
+                <div id="abrirCarrinho" style="position: relative; cursor: pointer; display: inline-block;">
+                    <img src="img/carrinho.png" alt="Carrinho">
+                    <span id="contador-sacola" style="position: absolute; top: -5px; right: -5px; background: #8C2E26; color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px; display: none;">0</span>
+                </div>
+
+                <img src="img/user.png" alt="Usuário">
+            </div>
+
+            <div class="menu-toggle">☰</div>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#carrossel">HOME</a></li>
+                <li><a href="cardapio_doces.html">CARDÁPIO</a></li>
+                <li><a href="sobre_nos">SOBRE NÓS</a></li>
+                <li><a href="para_presentear">PARA PRESENTEAR</a></li>
+                <li><a href="portfolio">PORTFÓLIO</a></li>
+            </ul>
+        </nav>
+    </header>
+<main class="container-cardapio">
+    
+    <section class="secao-busca">
+        <div class="envelope-busca">
+            <div class="circulo-icone">
+                <img src="img/icone_lupa.png" class="icone-busca-img" alt="Lupa">
+            </div>
+            <input type="text" id="campoBusca" placeholder="Pesquise aqui..." onkeyup="filtrarMenu()">
+        </div>
+    </section>
+
+    <nav class="categorias">
+        <a href="cardapio_doces.html" class="botao-cat ativo">DOCES</a>
+        <a href="cardapio_bebidas.html" class="botao-cat">BEBIDAS</a>
+        <a href="cardapio_salgados.html" class="botao-cat">SALGADOS</a>
+        <a href="cardapio_lanches.html" class="botao-cat">LANCHES</a>
+    </nav>
+    
+    <section class="categoria-produto secao-cupcakes">
+        <div class="conteudo-interno">
+            <div class="conteudo-produto">
+                <h2 class="titulo-categoria">CupCakes</h2>
+                <div class="lista-itens">
+                    <div class="item-produto">
+                        <span class="nome-doce">Morango com Recheio</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 11</span>
+                        <button class="botao-comprar">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                        <span class="nome-doce">Cupcake de Oreo</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 12</span>
+                        <button class="botao-comprar">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                        <span class="nome-doce">Baunilha com Buttercream</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 9</span>
+                        <button class="botao-comprar">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                        <span class="nome-doce">Ninho com Nutella</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 12</span>
+                        <button class="botao-comprar">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="imagem-destaque">
+                <img src="img/cupcake.png" alt="Destaque Cupcake"> 
+            </div>
+        </div>
+    </section>
+
+    <section class="categoria-produto secao-bolos">
+        <div class="conteudo-interno bolos-invertido">
+            <div class="imagem-destaque-bolo">
+                <img src="img/bolo.png" alt="Destaque Bolo">
+            </div>
+            <div class="conteudo-produto">
+                <h2 class="titulo-categoria">Bolos (fatia)</h2>
+                <div class="lista-itens">
+                    <div class="item-produto">
+                        <span class="nome-doce">Chocolate</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 11</span>
+                        <button class="botao-comprar-branco">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                                   <span class="nome-doce">
+                                      <a href="descricao_produto.html" style="text-decoration: none; color: inherit;">Morango com Chantilly</a></span>
+                            <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 13</span>
+                        <button class="botao-comprar-branco">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                        <span class="nome-doce">Red Velvet</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 11</span>
+                        <button class="botao-comprar-branco">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                        <span class="nome-doce">Cenoura com Chocolate</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 12</span>
+                        <button class="botao-comprar-branco">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categoria-produto secao-doces-gourmet">
+        <div class="conteudo-interno">
+            <div class="conteudo-produto">
+                <h2 class="titulo-categoria">Doces Gourmet</h2>
+                <div class="lista-itens">
+                    <div class="item-produto">
+                        <span class="nome-doce">Brigadeiro Tradicional</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 5</span>
+                        <button class="botao-comprar">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                        <span class="nome-doce">Beijinho</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 5</span>
+                        <button class="botao-comprar">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                        <span class="nome-doce">Casadinho</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 6</span>
+                        <button class="botao-comprar">Comprar</button>
+                    </div>
+                    <div class="item-produto">
+                        <span class="nome-doce">Brigadeiro de Ninho</span>
+                        <span class="linha-pontilhada"></span>
+                        <span class="preco-doce">R$ 6</span>
+                        <button class="botao-comprar">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="imagem-destaque">
+                <img src="img/doces_gourmet.png" alt="Destaque Brigadeiros"> 
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="modalCarrinho" class="modal-sobreposicao">
+    <div class="modal-conteudo">
+        <span class="fechar-modal">&times;</span>
+        <div class="checkout-container">
+            <div class="coluna-pagamento">
+                <div class="passo-checkout">
+                    <span class="numero-passo">1</span>
+                    <h3>Forma de Pagamento</h3>
+                </div>
+                <p class="instrucao">Selecione como deseja pagar ao finalizar:</p>
+                <div class="opcoes-pagamento">
+                    <label class="opcao-card">
+                        <input type="radio" name="pagamento" value="pix" checked>
+                        <span>Pix</span>
+                    </label>
+                    <label class="opcao-card">
+                        <input type="radio" name="pagamento" value="cartao">
+                        <span>Cartão (Débito/Crédito)</span>
+                    </label>
+                </div>
+                <button class="botao-finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
+            </div>
+            <div class="coluna-resumo">
+                <h2 class="titulo-resumo">Resumo do pedido</h2>
+                
+                <div id="lista-produtos-carrinho" style="max-height: 200px; overflow-y: auto; margin-bottom: 15px;">
+                </div>
+
+                <div class="total-pedido">
+                    <span>Total do pedido</span>
+                    <strong id="totalFinalModal">R$ 0,00</strong>
+                </div>
+                <a href="javascript:void(0)" class="voltar-link">Voltar ao cardápio</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="rodape">
+    <div class="topo-rodape">
+        <div class="logo-area">
+            <img src="img/logo_branca.png" alt="Logo">
+            <p>© 2026 SugarBliss Brasil. All rights reserved</p>
+        </div>
+        <div class="cadastro">
+            <h3>CADASTRE-SE</h3>
+            <div class="input-cadastro">
+                <input type="email" id="email" placeholder="Seu email">
+                <button onclick="cadastrar()">➤</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="conteudo-rodape">
+        <div class="coluna">
+            <h3>ENTREGA</h3>
+            <p>Produtos de pronta entrega:</p>
+            <p>delivery em até 24h para Mogi das Cruzes.</p>
+            <p>Outras cidades consulte na compra.</p>
+        </div>
+        <div class="coluna">
+            <h3>RETIRAR NA LOJA</h3>
+            <p>Av. Dr. Cândido Xavier de Almeida e Souza, 200</p>
+        </div>
+        <div class="coluna">
+            <h3>HORÁRIO</h3>
+            <p>Seg a sáb: 10h às 20h</p>
+            <p>Domingo: 12h às 18h</p>
+        </div>
+        <div class="coluna">
+            <h3>CONTATO</h3>
+            <p><img src="img/icon_carta.png"> contato@sugarbliss.com.br</p>
+            <p><img src="img/icon_telefone.png"> (11) 9999-0000</p>
+            <p><img src="img/icon_zap.png"> (11) 99999-9999</p>
+        </div>
+        <div class="coluna">
+            <h3>ACOMPANHE</h3>
+            <p><img src="img/icon_insta.png"> instagram.com/sugar_bliss</p>
+            <p><img src="img/icon_face.png"> facebook.com/sugarbliss</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

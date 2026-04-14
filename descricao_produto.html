@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morango com Chantilly - Sugar Bliss</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+
+    <header>
+        <div class="top-header">
+            <figure class="logo">
+                <img src="img/logo.png" alt="Logo Sugar Bliss">
+            </figure>
+
+            <div class="icons">
+                <img src="img/telefone.png" alt="Telefone">
+                
+                <div id="abrirCarrinho" style="position: relative; cursor: pointer; display: inline-block;">
+                    <img src="img/carrinho.png" alt="Carrinho">
+                    <span id="contador-sacola" style="position: absolute; top: -5px; right: -5px; background: #8C2E26; color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px; display: none;">0</span>
+                </div>
+
+                <img src="img/user.png" alt="Usuário">
+            </div>
+
+            <div class="menu-toggle">☰</div>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="cardapio_doces.html">CARDÁPIO</a></li>
+                <li><a href="#sobre">SOBRE NÓS</a></li>
+                <li><a href="#presentear">PARA PRESENTEAR</a></li>
+                <li><a href="#portfolio">PORTFÓLIO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-detalhe">
+        <div class="navegacao-voltar">
+            <a href="cardapio_doces.html" class="btn-voltar">
+                <span class="seta">←</span> Voltar ao Cardápio
+            </a>
+        </div>
+
+        <div class="layout-detalhe">
+            <div class="coluna-imagem">
+                <img src="img/bolo_descricao.png" alt="Morango com Chantilly">
+            </div>
+
+            <div class="coluna-infos">
+                <h1 class="nome-produto-detalhe">Morango com Chantilly 140g</h1>
+                
+                <p class="preco-produto-detalhe">R$ 12,00</p>
+                
+                <p class="descricao-produto-detalhe">
+                    Deliciosa combinação de morangos frescos selecionados com o nosso chantilly especial 
+                    feito na hora. Uma explosão de sabor e leveza para o seu dia.
+                </p>
+
+                <div class="acoes-compra">
+                    <div class="seletor-quantidade">
+                        <button onclick="mudarQtd(-1)">-</button>
+                        <input type="number" id="quantidade" value="1" min="1" readonly>
+                        <button onclick="mudarQtd(1)">+</button>
+                    </div>
+                    <button class="botao-comprar-detalhe" onclick="adicionar()">COMPRAR</button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="linha-rosa-divisora">
+
+        <section class="secao-comentarios">
+            <h2 class="titulo-comentarios">Opiniões Sobre:</h2>
+
+            <div class="card-comentario">
+                <div class="topo-comentario">
+                    <img src="img/usuario-avalia.png" alt="Ana" class="foto-usuario">
+                    <div class="user-info">
+                        <span class="nome-usuario">Ana Oliveira</span>
+                        <div class="estrelas-comentario">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span class="vazia">★</span>
+                        </div>
+                    </div>
+                    <span class="data-comentario">12/04/2026</span>
+                </div>
+                <p class="texto-comentario">
+                    Simplesmente maravilhoso! O chantilly é muito leve e os morangos estavam super fresquinhos. Com certeza vou pedir de novo.
+                </p>
+            </div>
+
+            <div class="card-comentario">
+                <div class="topo-comentario">
+                    <img src="img/usuario-avalia2.png" alt="Marcos" class="foto-usuario">
+                    <div class="user-info">
+                        <span class="nome-usuario">Marcos Souza</span>
+                        <div class="estrelas-comentario">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                    <span class="data-comentario">10/04/2026</span>
+                </div>
+                <p class="texto-comentario">
+                    Melhor doce que já comi na vida. A entrega foi super rápida e chegou geladinho!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div id="modalCarrinho" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-conteudo" style="background-color: white; margin: 10% auto; padding: 20px; border-radius: 15px; width: 90%; max-width: 400px; position: relative;">
+            <span class="fechar-modal" style="position: absolute; right: 20px; top: 10px; cursor: pointer; font-size: 25px;">&times;</span>
+            
+            <h2 style="color: #704B48; text-align: center;">Sua Sacola</h2>
+            <hr>
+            
+            <div id="lista-produtos-carrinho">
+                </div>
+
+            <div style="margin-top: 20px; display: flex; justify-content: space-between; font-weight: bold; font-size: 18px;">
+                <span>Total:</span>
+                <span id="totalFinalModal">R$ 0,00</span>
+            </div>
+
+            <button onclick="finalizarPedido()" style="width: 100%; background-color: #704B48; color: white; border: none; padding: 15px; border-radius: 10px; margin-top: 20px; cursor: pointer; font-weight: bold;">
+                FINALIZAR PEDIDO
+            </button>
+            
+            <p class="voltar-link" style="text-align: center; color: #704B48; text-decoration: underline; cursor: pointer; margin-top: 15px;">Continuar Comprando</p>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <div class="topo-rodape">
+            <div class="logo-area">
+                <img src="img/logo_branca.png" alt="Logo">
+                <p>© 2026 SugarBliss Brasil. All rights reserved</p>
+            </div>
+            <div class="cadastro">
+                <h3>CADASTRE-SE</h3>
+                <div class="input-cadastro">
+                    <input type="email" id="email" placeholder="Seu email">
+                    <button onclick="cadastrar()">➤</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="conteudo-rodape">
+            <div class="coluna">
+                <h3>ENTREGA</h3>
+                <p>delivery em até 24h para Mogi das Cruzes.</p>
+            </div>
+            <div class="coluna">
+                <h3>RETIRAR NA LOJA</h3>
+                <p>Av. Dr. Cândido Xavier de Almeida e Souza, 200</p>
+            </div>
+            <div class="coluna">
+                <h3>CONTATO</h3>
+                <p>(11) 99999-9999</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
